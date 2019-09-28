@@ -1,0 +1,38 @@
+[user]
+    name = Ashia
+    email = mail@ashia.ca
+[color]
+	ui = true
+[core]
+    editor = vim
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[alias]
+    lg = log --topo-order --all --graph --date=local --pretty=format:'%C(green)%h%C(reset) %><(55,trunc)%s%C(red)%d%C(reset) %C(blue)[%an]%C(reset) %C(yellow)%ad%C(reset)%n'
+    sw = show --pretty='format:' --name-only
+    st = status
+[diff]
+    tool = vimdiff
+[merge]
+    tool = vimdiff
+[difftool]
+    prompt = false
+[rebase]
+    autostash = true
+[pull]
+    rebase = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[push]
+	default = current
+[rerere]
+    enabled = true
