@@ -127,7 +127,7 @@ noremap <leader>eb :!black %<CR>
 
 " insert dashes
 " nnoremap <leader>- :set ri<cr>80A-<esc>81<bar>d$0:set nori<cr>
-nnoremap <leader>- :set ri<cr>120A-<esc>121<bar>d$0:set nori<cr>
+nnoremap <leader>- :set ri<cr>80A-<esc>81<bar>d$0:set nori<cr>
 "-----------------------------------------------------------------------------------------------------------------------
 
 
