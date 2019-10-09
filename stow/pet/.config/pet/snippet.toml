@@ -1,0 +1,4 @@
+[[snippets]]
+  description = "Run black"
+  command = "black . --exclude 'migrations|node_modules'"
+  output = ""
