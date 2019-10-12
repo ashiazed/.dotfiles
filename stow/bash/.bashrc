@@ -79,3 +79,6 @@ sl () {
             done &
     fi
 }
+
+# hook envrc files
+eval "$(direnv hook bash)"
