@@ -33,7 +33,12 @@ function pet-select() {
   READLINE_LINE=$BUFFER
   READLINE_POINT=${#BUFFER}
 }
-bind -x '"\C-x\C-r": pet-select'
+
+# only bind in interactive mode
+if [[ $- == *i* ]]
+then
+    bind -x '"\C-x\C-r": pet-select'
+fi
 
 # Less config
 export LESS_TERMCAP_mb=$'\e[01;31m'       # begin blinking
