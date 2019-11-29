@@ -1,7 +1,7 @@
 # Bash config 
 export OSH=/home/ashia/.oh-my-bash
 
-OSH_THEME="sexy"
+OSH_THEME="powerline-multiline"
 
 # oh my bash plugins
 plugins=(core git bashmarks progress)
@@ -63,9 +63,9 @@ alias xp='xsel -i -b'
 
 # docker get network address
 dip () {
-    docker inspect --format '{{ .NetworkSettings.IPAddress }}' "$1"
+    docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' "$1"
 }
-
+  
 # forward port from remote to local
 sl () {
     if [ $# -eq 0 ]
@@ -82,6 +82,22 @@ sl () {
                     fi
                     sleep 10
             done &
+    fi
+}
+
+# forward port from local to remote
+sr() { 
+    if [ $# -eq 0 ]; then
+        echo 'Usage: sl $host $port $bindingaddress(optional)'
+    else
+        while true
+        do
+            if [ -z "$3"]; then
+                ssh -nNT -R "$2":localhost:"$2" "$1"
+            else
+                ssh -nNT -R "$2":"$3":"$2" "$1"
+            fi
+        done &
     fi
 }
 
