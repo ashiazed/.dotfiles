@@ -15,6 +15,7 @@ Plug 'rbgrouleff/bclose.vim' " Ranger dep for neovim
 Plug 'tpope/vim-commentary' " Better commenting commands
 Plug 'tpope/vim-surround' " Helps with surrounding text
 Plug 'w0rp/ale' " Async linting
+Plug 'editorconfig/editorconfig-vim'
 
 " File Type Specific
 Plug 'chr4/nginx.vim' " nginx goodness
