@@ -16,6 +16,7 @@ Plug 'tpope/vim-commentary' " Better commenting commands
 Plug 'tpope/vim-surround' " Helps with surrounding text
 Plug 'w0rp/ale' " Async linting
 Plug 'editorconfig/editorconfig-vim'
+Plug 'srcery-colors/srcery-vim'
 
 " File Type Specific
 Plug 'chr4/nginx.vim' " nginx goodness
@@ -61,7 +62,8 @@ au FileType make setlocal tabstop=4 noexpandtab
 " Setup colorscheme
 set termguicolors
 syntax enable
-colorscheme dracula 
+" colorscheme dracula 
+colorscheme srcery
 " transparency?
 hi! Normal ctermbg=NONE guibg=NONE
 "
@@ -129,6 +131,10 @@ noremap <leader>eb :!black %<CR>
 " insert dashes
 " nnoremap <leader>- :set ri<cr>80A-<esc>81<bar>d$0:set nori<cr>
 nnoremap <leader>- :set ri<cr>80A-<esc>81<bar>d$0:set nori<cr>
+
+" Zoom splits
+noremap Zz <c-w>_ \| <c-w>\|
+noremap Zo <c-w>=
 "-----------------------------------------------------------------------------------------------------------------------
 
 
@@ -230,7 +236,7 @@ if !empty(glob($EditorDir.'plugged/ack.vim/plugin/ack.vim'))
   endfunction
   " Setting better default settings
   let g:ackprg =
-        \ "ack -s -H --nocolor --nogroup --column --ignore-dir=.venv/ --ignore-dir=.vimcache/ --ignore-dir=migrations/ --ignore-dir=.mypy_cache/ --ignore-dir=htmlcov/ --ignore-dir=.pytest_cache/ --ignore-file=is:.coverage --ignore-file=is:tags --nojs --nocss --nosass"
+        \ "ack -s -H --nocolor --nogroup --column --ignore-dir=.venv/ --ignore-dir=initdb.d --ignore-dir=.vimcache/ --ignore-dir=migrations/ --ignore-dir=.mypy_cache/ --ignore-dir=htmlcov/ --ignore-dir=.pytest_cache/ --ignore-file=is:.coverage --ignore-file=is:tags --nojs --nocss --nosass"
 endif
 "-----------------------------------------------------------------------------------------------------------------------
 
